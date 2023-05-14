@@ -16,7 +16,6 @@
             return $popValue;
         }
 
-
         public function push($value){
             if($this->isFull()) throw new Exception("Stack is full!");
 
@@ -56,7 +55,8 @@
 
         switch ($choice){
             case 1:
-                $newValue =  readline("Wartosc do wpisania w stos (int): ");
+                $newValue = (int) readline("Wartosc do wpisania w stos (int): ");
+
                 try {
                     $stack->push($newValue);
                 } catch (Exception $e) {
@@ -66,14 +66,14 @@
 
             case 2:
                 try {
-                    echo $stack->pop();
+                    echo "Usunieta wartosc: ", $stack->pop();
                 } catch (Exception $e) {
                     echo $e, "\n";
                 }
                 break;
 
             case 3:
-                echo $stack->printStack();
+                $stack->printStack();
                 break;
 
             case 4:
